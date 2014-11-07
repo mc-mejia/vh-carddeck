@@ -8,7 +8,7 @@ class Deck
         reset()
     }
     
-    private void reset()
+    private def reset()
     {
         cards = []
         addSuit(Suit.SPADES)
@@ -17,7 +17,7 @@ class Deck
         addSuit(Suit.CLUBS)  
     }
         
-    private void addSuit(Suit suit)
+    private def void addSuit(Suit suit)
     {
         for (int i = 2; i <= Card.ACE; i++)
         {
@@ -26,7 +26,7 @@ class Deck
         }
     }
 
-    public boolean isEmpty()
+    def boolean isEmpty()
     {
         return cards.isEmpty()
     }
@@ -34,28 +34,28 @@ class Deck
     // methods
 
     // add - puts a Card at the end ("bottom") of the pile.  It just uses the List method
-    public void add(Card aCard)
+    def void add(Card aCard)
     {
         cards.add(aCard)
     }
 
-    public void clear()
+    def void clear()
     {
         cards.clear()
     }
 
     // getTopCard - removes and returns the "top" card of the pile.  It just uses the List method
-    public Card getTopCard()
+    def getTopCard()
     {
         return cards.remove(0)
     }
 
-    public int size()
+    def int size()
     {
         return cards.size()
     }
 
-    public Card deal()
+    def deal()
     {
         if(isEmpty())
         {
@@ -67,7 +67,7 @@ class Deck
         }
     }
 
-    public Card[] deal(int number)
+    def deal(int number)
     {
         if (number > cards.size())
         {
@@ -75,8 +75,8 @@ class Deck
         }
         else
         {
-            Card[] hand = new Card[number]
-            for(int i = 0; i < hand.length; i++)
+            def hand = []
+            for(int i = 0; i < number; i++)
             {
                 hand[i] = deal()
             }
@@ -84,7 +84,7 @@ class Deck
         }
     }
     
-    public void shuffle()
+    def void shuffle()
     {
         if (cards.size() < MAX_SIZE)
         {
@@ -109,7 +109,7 @@ class Deck
         }
     }
 
-    public String toString()
+    def String toString()
     {
         String result = ""
         for(Card card : cards)

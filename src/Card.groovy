@@ -28,7 +28,7 @@ class Card
     /** 
      * Returns a string representation of the card
      */
-    public String toString()
+    def String toString()
     {
         return ranks[rank] + " of " + suit
     }
@@ -38,7 +38,7 @@ class Card
      *   0 if the cards are equal rank, and a positive number if this object
      *   is higher in rank than c. Aces are considered 'high'.
      */
-    public int compareRank(Card c)
+    def int compareRank(Card c)
     {
         return rank - c.rank
     }
@@ -46,7 +46,7 @@ class Card
     /**
      * Returns true if the objects are equals, false otherwise
      */
-    public boolean equals(Card c)
+    def boolean equals(Card c)
     {
         return this.rank == c.rank && this.suit == c.suit
     }
