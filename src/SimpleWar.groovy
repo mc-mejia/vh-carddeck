@@ -10,7 +10,7 @@ int handSize = Deck.MAX_SIZE / 2 // assumes we have an even number
 int turnerGames = 0
 int iprepGames = 0
 
-for (int i = 0; i<1000; i++)
+for (int i = 0; i<20; i++)
 {
     // Reset the deck
     deck.reset()
