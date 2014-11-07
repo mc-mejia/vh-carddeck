@@ -86,28 +86,40 @@ class Deck
     
     def void shuffle()
     {
+        // The algorithm used here is Fisher-Yates algorithm:
+        // http://en.wikipedia.org/wiki/Fisher-Yates_shuffle
+        Collections.shuffle(cards)
+    }
+
+    // The original inefficient hunt and peck shuffle algorithm
+    /*
+    def void shuffle()
+    {
         if (cards.size() < MAX_SIZE)
         {
             println "Couldn't shuffle. There are only " + cards.size() + " cards!"
             return
         }
         Random gen = new Random()
-        Card[] array = new Card[MAX_SIZE]
+        def shuffled = []
         while (cards.size() > 0)
         {
             Card card = cards.remove(cards.size() - 1)
             int i = gen.nextInt(MAX_SIZE)
-            while (array[i] != null)
+            while (shuffled[i] != null)
             {
                 i = gen.nextInt(MAX_SIZE)
             }                
-            array[i] = card
+            shuffled[i] = card
         }
-        for (Card card : array)
+        // Put all the shuffled cards back in the original list
+        // TODO: Shouldn't we just do cards = shuffled ?
+        for (Card card : shuffled)
         {
             cards.add(card)
         }
     }
+    */
 
     def String toString()
     {
