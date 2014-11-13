@@ -1,7 +1,7 @@
 class Card
 {
-    private int rank
-    private Suit suit
+    int rank
+    Suit suit
 
     static def ranks = [null, null, "2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king", "ace"]
 
