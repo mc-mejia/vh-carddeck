@@ -1,5 +1,5 @@
-vh-cardeck
-==========
+vh-carddeck
+===========
 
 A deck of cards around which we will teach basic programming skills
 
