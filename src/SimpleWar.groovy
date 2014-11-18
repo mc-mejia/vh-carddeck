@@ -7,7 +7,7 @@ Deck deck = new Deck()
 def player1 = "Turner"
 def player2 = "iPrep"
 
-int handSize = Deck.MAX_SIZE / 2 // assumes we have an even number
+int handSize = 2 // each player gets two cards
 def hand1 = []
 def hand2 = []
 
@@ -24,25 +24,27 @@ for (int i = 0; i<numGames; i++)
     // Shuffle the Deck
     deck.shuffle()
     
-    // Deal the hands (half for each player)
+    // Deal the hands (2 cards at beginning)
     hand1 = deck.deal(handSize)
     hand2 = deck.deal(handSize)
     
-    // print each hand before we play
-    // println(hand1)
-    // println(hand2)
+    // print only the last card
+    println(hand1[hand1.length -1])
+    println(hand2[hand2.length -1])
     
     def cardsInBattle = []
-    def player1BattlesWon = 0
-    def player2BattlesWon = 0
+    def player1Score = 0
+    def player2Score = 0
 
-    // The "battle" loop. Each draw is a battle in the war (game)
+    // Player can choose to get more cards until they stop or go over 21)
     // While any player has at least one card, we will keep playing
-    while (hand1.size() > 0 && hand2.size() > 0)
+    while (player1Score <= 21 && player2Score <= 21)
     {
-        // Draw the top card for each player
-        Card card1 = hand1.remove(0)
-        Card card2 = hand2.remove(0)
+        // Calculate the number of points the player has
+        for (int i = 0; i< hand1.length; i++){
+            player1Score += ranks[rank]
+            player2Score = 
+        }
 
         // Fight!
         cardsInBattle.add(card1)
