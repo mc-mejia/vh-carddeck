@@ -4,12 +4,12 @@ class Card
     Suit suit
 
     static def ranks = [null, null, "2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king", "ace"]
-	static def values = [null, null, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, "ace"]
+	//static def values = [null, null, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11]
 
-    public static final int JACK  = 11
-    public static final int QUEEN = 12
-    public static final int KING  = 13
-    public static final int ACE   = 14
+    public static final int JACK  = 10
+    public static final int QUEEN = 10
+    public static final int KING  = 10
+    public static final int ACE   = 11
     
     /** 
      * Constructor
