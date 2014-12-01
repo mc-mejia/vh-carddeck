@@ -25,13 +25,13 @@ def hand2 = []
     
     // print only the last card
     println(player1+"'s top card: " + hand1[hand1.size -1])
-    println(player2+"'s top card: " + hand2[hand2.size -1])
+    println(player2+"'s top card: " + hand2[hand2.size -1] + "\n")
     
     def cardsInBattle = []
     def player1Score = 0
     def player2Score = 0
 
-    int games = 10
+    int games = 4
     int currentCard = 0
 
     // Player can choose to get more cards until they stop or go over 21)
@@ -51,11 +51,12 @@ def hand2 = []
                 println(player2 + "'s score is: " + player2Score)
                 yesOrNo = console.readLine(player2 +'> Hit or Stand?')
 
-                if (yesOrNo.equals("Hit")){
+                if (yesOrNo.equals("Hit") || yesOrNo.equals("hit") || yesOrNo.equals("h") || yesOrNo.equals("H")){
 
                     hand2 += deck.deal(1)
+                    println("\n"+ "New card is :" + hand2[hand2.size -1])
                     player2Score += hand2[hand2.size -1].rank
-                    println(player2 + "'s score is: " + player2Score)
+                    println("\n"+ player2 + "'s score is: " + player2Score)
                     if (player2Score > 21)
                         break;
                 }           
@@ -65,12 +66,13 @@ def hand2 = []
             println(player1 + "'s score is: " + player1Score)
             yesOrNo = console.readLine(player1 +'> Hit or Stand?')
 
-            if (yesOrNo.equals("Hit")){
+            if ((yesOrNo.equals("Hit") || yesOrNo.equals("hit") || yesOrNo.equals("h") || yesOrNo.equals("H"))){
 
                 hand1 += deck.deal(1)
+                println("\n"+ "New card is :" + hand1[hand1.size -1])
                 player1Score += hand1[hand1.size-1].rank
 
-                 println(player1 + "'s score is: " + player1Score)
+                 println("\n"+ player1 + "'s score is: " + player1Score)
                 if (player2Score > 21)
                         break
             }
@@ -82,7 +84,7 @@ def hand2 = []
     }
 
 
-    println("All players now stand")
+    println("\n"+ "All players now stand")
     println("Final Scores Are: ")
     println("   " + player1 + ":"+ player1Score)
     println("   " + player2 + ":"+ player2Score)
